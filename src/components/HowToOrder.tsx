@@ -8,14 +8,14 @@ const steps = [
 export default function HowToOrder() {
   return (
     <section id="order" className="bg-peach">
-      {/* Teal ribbon between the blush section above and this one */}
+      {/* Pink ribbon between the blush section above and this one */}
       <svg
         viewBox="0 0 1440 150"
         preserveAspectRatio="none"
         aria-hidden="true"
         className="block h-20 w-full sm:h-28 lg:h-32"
       >
-        <path className="fill-teal" d="M0 0h1440v120C1340 120 1310 94 1240 94C1189 94 1172 126 1070 126C976 126 968 106 900 106C795 106 795 142 690 142C630 142 614 112 520 112C448 112 442 128 400 128C306 128 295 92 190 92C95 92 66 124 0 124Z" />
+        <path className="fill-brand" d="M0 0h1440v120C1340 120 1310 94 1240 94C1189 94 1172 126 1070 126C976 126 968 106 900 106C795 106 795 142 690 142C630 142 614 112 520 112C448 112 442 128 400 128C306 128 295 92 190 92C95 92 66 124 0 124Z" />
         <path className="fill-blush" d="M0 0h1440v40C1396 40 1385 14 1330 14C1264 14 1254 46 1140 46C1060 46 1028 26 980 26C885 26 885 40 790 40C676 40 657 12 600 12C544 12 536 58 440 58C360 58 344 22 280 22C208 22 190 44 100 44C65 44 60 34 0 34Z" />
       </svg>
 
@@ -36,7 +36,7 @@ export default function HowToOrder() {
                 <h3 className="font-display text-2xl text-plum [word-spacing:-0.18em]">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-teal xl:text-base">
+                <p className="mt-3 text-sm leading-relaxed text-ink/90 xl:text-base">
                   {step.text}
                 </p>
               </div>

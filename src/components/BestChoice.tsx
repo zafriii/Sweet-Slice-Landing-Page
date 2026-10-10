@@ -11,7 +11,7 @@ const perks = [
 // Shared by every offset outline in the collage
 const outline = "absolute inset-0 border-2";
 const note =
-  "absolute z-30 rounded-full border-2 border-teal bg-white px-4 py-1 font-hand text-xl leading-none text-teal shadow-md shadow-teal/15 sm:text-2xl";
+  "absolute z-30 rounded-full border-2 border-plum bg-white px-4 py-1 font-hand text-xl leading-none text-plum shadow-md shadow-plum/15 sm:text-2xl";
 
 export default function BestChoice() {
   return (
@@ -41,7 +41,7 @@ export default function BestChoice() {
             <span className="block sm:whitespace-nowrap">Every Occasion</span>
           </h2>
 
-          <p className="mt-6 max-w-[34rem] text-base leading-relaxed text-teal lg:text-lg">
+          <p className="mt-6 max-w-[34rem] text-base leading-relaxed text-ink/90 lg:text-lg">
             At Sweet Slice, we turn simple ingredients into delectable works of
             edible art. Satisfy your cravings with our irresistible pastries
             and baked goods, delivered fresh from the oven for you to enjoy.
@@ -50,19 +50,19 @@ export default function BestChoice() {
           <ul className="mt-10 flex max-w-[36rem] flex-wrap gap-2.5 text-xs font-bold uppercase tracking-wider sm:text-[13px]">
             <li
               aria-hidden="true"
-              className="flex items-center rounded-full border-2 border-teal px-6 text-teal"
+              className="flex items-center rounded-full border-2 border-plum px-6 text-plum"
             >
               <span className="size-1.5 rounded-full bg-current" />
             </li>
             {perks.map((perk) => (
               <li
                 key={perk}
-                className="rounded-full border-2 border-teal bg-teal px-6 py-3 text-white shadow-md shadow-teal/20"
+                className="rounded-full border-2 border-plum bg-plum px-6 py-3 text-white shadow-md shadow-plum/20"
               >
                 {perk}
               </li>
             ))}
-            <li className="rounded-full border-2 border-teal px-6 py-3 text-teal">
+            <li className="rounded-full border-2 border-plum px-6 py-3 text-plum">
               &amp; more
             </li>
           </ul>
@@ -74,12 +74,12 @@ export default function BestChoice() {
         <div className="relative mx-auto aspect-[10/11] w-full max-w-md lg:max-w-none">
           <SparkleIcon className="absolute -left-9 top-[46%] hidden size-9 text-brand lg:block xl:-left-14" />
           <SparkleIcon className="absolute left-[40%] top-0 size-6 text-brand" />
-          <SparkleIcon className="absolute bottom-[3%] left-[34%] size-5 text-teal" />
+          <SparkleIcon className="absolute bottom-[3%] left-[34%] size-5 text-plum" />
 
-          {/* Teal arch */}
+          {/* Pink arch */}
           <div className="absolute left-0 top-[14%] h-[62%] w-[56%] -rotate-5">
-            <div className={`${outline} -translate-y-3 translate-x-3 rotate-3 rounded-b-[2rem] rounded-t-full border-brand`} />
-            <div className="absolute inset-0 rounded-b-[2rem] rounded-t-full bg-teal" />
+            <div className={`${outline} -translate-y-3 translate-x-3 rotate-3 rounded-b-[2rem] rounded-t-full border-plum`} />
+            <div className="absolute inset-0 rounded-b-[2rem] rounded-t-full bg-brand" />
             <Image
               src="/images/cake1.png"
               alt="Two-tier white birthday cake with purple piping and a gold heart topper"
@@ -92,7 +92,7 @@ export default function BestChoice() {
 
           {/* White circle */}
           <div className="absolute right-0 top-[2%] aspect-square w-[44%]">
-            <div className={`${outline} -translate-x-2 translate-y-3 rounded-full border-teal`} />
+            <div className={`${outline} -translate-x-2 translate-y-3 rounded-full border-plum`} />
             <div className="absolute inset-0 rounded-full bg-white" />
             <Image
               src="/images/cake2.png"

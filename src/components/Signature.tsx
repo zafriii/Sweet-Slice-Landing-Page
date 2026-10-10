@@ -60,13 +60,13 @@ export default function Signature() {
               </div>
 
               <div className="mt-5 flex items-start justify-between gap-4">
-                <h3 className="min-h-[2.5em] text-balance font-display text-xl leading-tight text-teal [word-spacing:-0.18em] xl:text-2xl">
+                <h3 className="min-h-[2.5em] text-balance font-display text-xl leading-tight text-plum [word-spacing:-0.18em] xl:text-2xl">
                   {product.name}
                 </h3>
                 <button
                   type="button"
                   aria-label={`Add ${product.name} to bag`}
-                  className="flex size-12 shrink-0 items-center justify-center rounded-md bg-teal text-white transition-colors hover:bg-teal-dark"
+                  className="flex size-12 shrink-0 items-center justify-center rounded-md bg-brand text-white transition-colors hover:bg-brand-dark"
                 >
                   <ShoppingBagIcon className="size-5" />
                 </button>
@@ -78,7 +78,7 @@ export default function Signature() {
                 </p>
                 <Link
                   href={product.href}
-                  className="border-b border-teal pb-0.5 text-xs font-bold text-teal transition-colors hover:border-plum hover:text-plum"
+                  className="border-b border-plum pb-0.5 text-xs font-bold text-plum transition-colors hover:border-brand hover:text-brand"
                 >
                   More Details
                 </Link>
