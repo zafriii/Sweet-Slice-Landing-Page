@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   CakeLogoIcon,
-  CartIcon,
   CloseIcon,
   MenuIcon,
   SearchIcon,
@@ -16,8 +15,6 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
-
-const cartCount = 2;
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -65,16 +62,6 @@ export default function Navbar() {
             >
               <SearchIcon className="size-6 lg:size-7" />
             </button>
-            <Link
-              href="#cart"
-              aria-label={`Cart, ${cartCount} items`}
-              className="relative transition-colors hover:text-brand"
-            >
-              <CartIcon className="size-6 lg:size-7" />
-              <span className="absolute -right-2 -top-2 flex size-[18px] items-center justify-center rounded-full bg-brand text-[11px] font-bold text-white">
-                {cartCount}
-              </span>
-            </Link>
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
