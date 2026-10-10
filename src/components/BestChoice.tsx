@@ -1,11 +1,73 @@
 import Image from "next/image";
-import { SparkleIcon } from "./icons";
+import { ImageIcon, SparkleIcon } from "./icons";
 
 const perks = [
   "Quality ingredients",
   "Personalized service",
   "On-time delivery",
   "Affordable prices",
+];
+
+type Occasion = {
+  name: string;
+  text: string;
+  // Leave unset to show the placeholder; point at a file in /public/images once the photo exists
+  image?: string;
+  alt?: string;
+};
+
+const occasions: Occasion[] = [
+  {
+    name: "Birthday",
+    text: "Candles, wishes and their favourite flavour.",
+    image: "/images/birthday_cake.jpg",
+  },
+  {
+    name: "Engagement",
+    text: "For the ring, the yes and the photos.",
+  },
+  {
+    name: "Paan Chini",
+    text: "Sweets shared as two families say yes.",
+  },
+  {
+    name: "Haldi / Mehendi",
+    text: "Bright florals to match the celebration.",
+    image: "/images/haldi_ceremony_cake.jpeg",
+  },
+  {
+    name: "Wedding / Akht",
+    text: "Elegant tiers for the big day.",
+  },
+  {
+    name: "Anniversary",
+    text: "Another year together, worth celebrating.",
+  },
+  {
+    name: "Class Party",
+    text: "Big enough for the whole batch to share.",
+    image: "/images/class_party_cake.jpg",
+  },
+  {
+    name: "Teachers Day",
+    text: "A sweet thank-you for a favourite teacher.",
+    image: "/images/teachers_day_cake.jpeg",
+  },
+  {
+    name: "Friendship Day",
+    text: "Made for the ones who feel like family.",
+    image: "/images/friendship_day_cake.jpg",
+  },
+  {
+    name: "Reunion Cakes",
+    text: "Old friends, new memories, one cake.",
+    image: "/images/reunion_cake.jpg",
+  },
+  {
+    name: "Date Night",
+    text: "A little something sweet, just for two.",
+    image: "/images/Date_Night_Cake.jpeg",
+  },
 ];
 
 // Shared by every offset outline in the collage
@@ -124,6 +186,53 @@ export default function BestChoice() {
             kids&rsquo; parties
           </p>
         </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 pb-20 sm:px-10 lg:px-24 lg:pb-28 xl:px-30">
+        <h3 className="text-center font-display text-3xl text-plum [-webkit-text-stroke:0.008em_currentColor] [word-spacing:-0.18em] sm:text-4xl lg:text-5xl">
+          A Cake for Every Occasion
+        </h3>
+
+        {/* Flex rather than grid, so the short last row sits centred. Each card
+            repeats the collage's arch, with its outline knocked off register. */}
+        <ul className="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-12 lg:mt-16 lg:gap-x-8 lg:gap-y-14">
+          {occasions.map((occasion) => (
+            <li
+              key={occasion.name}
+              className="group w-[calc(50%-0.75rem)] max-w-[17rem] text-center sm:w-[calc((100%-3rem)/3)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <div className="relative aspect-[4/5] group-odd:-rotate-2 group-even:rotate-2">
+                <div
+                  className={`${outline} translate-x-2 translate-y-2 rounded-b-[2rem] rounded-t-full group-odd:border-plum group-even:border-brand`}
+                />
+                <div className="absolute inset-0 overflow-hidden rounded-b-[2rem] rounded-t-full bg-white">
+                  {occasion.image ? (
+                    <Image
+                      src={occasion.image}
+                      alt={occasion.alt ?? `${occasion.name} cake`}
+                      fill
+                      sizes="(min-width: 1024px) 17rem, (min-width: 640px) 30vw, 45vw"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-full flex-col items-center justify-center gap-3 px-4 text-plum/50">
+                      <ImageIcon className="size-8 sm:size-10" />
+                      <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] sm:text-xs">
+                        Photo coming soon
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
+              <h4 className="mt-6 font-display text-xl text-plum [word-spacing:-0.18em] sm:text-2xl">
+                {occasion.name}
+              </h4>
+              <p className="mt-2 text-pretty text-sm leading-relaxed text-ink/90">
+                {occasion.text}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
