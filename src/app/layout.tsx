@@ -22,7 +22,7 @@ const sueEllen = Sue_Ellen_Francisco({
 });
 
 export const metadata: Metadata = {
-  title: "Cakes Bakery — Natural and healthy cakes",
+  title: "sweetslice",
   description: "Freshly baked, natural and healthy cakes for every occasion.",
 };
 
