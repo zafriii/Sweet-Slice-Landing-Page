@@ -8,18 +8,14 @@ const stats = [
   { value: 2, plus: false, label: "Years of baking" },
 ];
 
-type Chat = {
-  // Leave unset to show the placeholder; point at a file in /public/images/screenshots
-  // once the screenshot exists, along with its pixel size so the card keeps its shape
-  image?: { src: string; width: number; height: number };
-  alt?: string;
-};
+// A file in /public/images/screenshots, with its pixel size so the card keeps its shape
+type Chat = { src: string; width: number; height: number; alt: string };
 
 function shot(file: string, width: number, height: number, alt: string): Chat {
-  return { image: { src: `/images/screenshots/${file}`, width, height }, alt };
+  return { src: `/images/screenshots/${file}`, width, height, alt };
 }
 
-// Ordered tall, short, tall, short… so the columns come out roughly level
+// Ordered narrow, wide, narrow, wide… so the row keeps an even rhythm
 const chats: Chat[] = [
   shot(
     "1.jpeg",
@@ -59,15 +55,17 @@ const chats: Chat[] = [
   ),
 ];
 
-// Each card is pinned up at its own angle; placeholders also vary in height,
-// like the mixed bag of screenshots they stand in for
-const tilts = ["sm:-rotate-2", "sm:rotate-1", "sm:-rotate-1", "sm:rotate-2"];
-const placeholderShapes = ["aspect-[3/4]", "aspect-[4/5]", "aspect-[9/14]"];
+// Each card is pinned up at its own angle
+const tilts = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2"];
+
+// The row is repeated this many times side by side and every copy slides left by
+// its own width, so the loop has no seam. Three copies outlast even very wide screens.
+const COPIES = 3;
 
 export default function HappyCustomers() {
   return (
     <section id="reviews" className="bg-cream">
-      <div className="mx-auto max-w-7xl px-6 pb-20 pt-12 sm:px-10 sm:pt-16 lg:px-24 lg:pb-28 xl:px-30">
+      <div className="mx-auto max-w-7xl px-6 pt-12 sm:px-10 sm:pt-16 lg:px-24 xl:px-30">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-hand text-3xl leading-none text-brand sm:text-4xl">
             sweet words, straight from our inbox
@@ -107,48 +105,44 @@ export default function HappyCustomers() {
             ))}
           </dl>
         </div>
+      </div>
 
-        {/* Swipeable row on phones, so each chat stays wide enough to read;
-            a pinboard of uneven columns from sm up. */}
-        <ul className="-mx-6 mt-10 flex snap-x snap-mandatory items-start gap-5 overflow-x-auto px-6 pb-6 pt-5 sm:mx-0 sm:mt-14 sm:block sm:columns-2 sm:gap-8 sm:overflow-visible sm:px-0 sm:pb-0 lg:mt-16 lg:columns-3">
-          {chats.map((chat, i) => (
-            <li
-              key={chat.image?.src ?? i}
-              className={`relative w-[78%] max-w-xs shrink-0 snap-center break-inside-avoid pt-3 sm:mb-7 sm:w-auto sm:max-w-none ${tilts[i % tilts.length]}`}
-            >
-              {/* Strip of tape holding the card up. It sits inside the item's own
-                  box, or the column break would leave it behind in the previous column. */}
-              <span
-                aria-hidden="true"
-                className="absolute left-1/2 top-0 z-10 h-6 w-24 -translate-x-1/2 -rotate-3 bg-brand/30"
-              />
-              <div className="overflow-hidden rounded-2xl border-2 border-plum bg-white p-2.5 shadow-lg shadow-plum/15">
-                {chat.image ? (
+      {/* Endless conveyor of chats running the full width of the page. It pauses
+          under the pointer, and the edges fade out so cards drift in and out
+          rather than being cut off. Motion rules live in globals.css. */}
+      <div className="marquee mt-8 flex pb-16 pt-6 [mask-image:linear-gradient(to_right,transparent,#000_6%,#000_94%,transparent)] sm:mt-12 lg:pb-24">
+        {Array.from({ length: COPIES }, (_, copy) => (
+          <ul
+            key={copy}
+            aria-hidden={copy > 0 || undefined}
+            className="marquee-group flex shrink-0 items-center gap-6 pr-6 sm:gap-9 sm:pr-9"
+          >
+            {chats.map((chat, i) => (
+              <li
+                key={chat.src}
+                className={`relative shrink-0 pt-3 ${tilts[i % tilts.length]}`}
+              >
+                {/* Strip of tape holding the card up */}
+                <span
+                  aria-hidden="true"
+                  className="absolute left-1/2 top-0 z-10 h-6 w-24 -translate-x-1/2 -rotate-3 bg-brand/30"
+                />
+                <div className="rounded-2xl border-2 border-plum bg-white p-2.5 shadow-lg shadow-plum/15">
                   <Image
-                    src={chat.image.src}
-                    alt={chat.alt ?? "Screenshot of a message from a happy customer"}
-                    width={chat.image.width}
-                    height={chat.image.height}
-                    sizes="(min-width: 1024px) 20rem, (min-width: 640px) 45vw, 78vw"
-                    className="h-auto w-full rounded-lg"
+                    src={chat.src}
+                    alt={copy === 0 ? chat.alt : ""}
+                    width={chat.width}
+                    height={chat.height}
+                    sizes="(min-width: 640px) 30rem, 25rem"
+                    // Cards slide in by transform, which lazy loading is slow to notice
+                    loading="eager"
+                    className="h-80 w-auto max-w-none rounded-lg sm:h-96"
                   />
-                ) : (
-                  <div
-                    className={`flex flex-col gap-3 rounded-lg bg-blush p-4 ${placeholderShapes[i % placeholderShapes.length]}`}
-                  >
-                    <span className="h-9 w-3/4 rounded-2xl rounded-bl-sm bg-white" />
-                    <span className="h-14 w-2/3 rounded-2xl rounded-bl-sm bg-white" />
-                    <span className="h-9 w-1/2 self-end rounded-2xl rounded-br-sm bg-brand/25" />
-                    <span className="m-auto text-center text-xs font-bold uppercase tracking-[0.2em] text-plum/50">
-                      Screenshot coming soon
-                    </span>
-                    <span className="h-9 w-3/5 rounded-2xl rounded-bl-sm bg-white" />
-                  </div>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ))}
       </div>
 
       {/* Pink page frame rising to close the page */}

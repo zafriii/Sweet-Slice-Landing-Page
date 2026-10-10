@@ -46,3 +46,40 @@ body {
       0 0 / var(--stamp-step) var(--stamp-step) round;
   mask-origin: border-box;
 }
+
+/* Endless horizontal conveyor: each .marquee-group is one copy of the row, and
+   every copy slides left by exactly its own width, so the next one lands where
+   the last one started. */
+.marquee {
+  overflow: hidden;
+}
+
+.marquee-group {
+  animation: marquee 45s linear infinite;
+}
+
+.marquee:hover .marquee-group {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Without motion, drop the copies and let the single row be scrolled by hand */
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+  }
+
+  .marquee-group {
+    animation: none;
+    padding-inline: 1.5rem;
+  }
+
+  .marquee-group[aria-hidden] {
+    display: none;
+  }
+}
