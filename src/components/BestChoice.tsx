@@ -124,16 +124,6 @@ export default function BestChoice() {
           </p>
         </div>
       </div>
-
-      {/* Cream swell closing the section */}
-      <svg
-        viewBox="0 0 1440 100"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-        className="block h-12 w-full fill-cream sm:h-20"
-      >
-        <path d="M0 100V58C160 18 330 70 520 50C720 28 860 80 1060 54C1220 34 1340 60 1440 38V100Z" />
-      </svg>
     </section>
   );
 }
