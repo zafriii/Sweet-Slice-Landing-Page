@@ -16,20 +16,21 @@ const note =
 export default function BestChoice() {
   return (
     <section id="occasions" className="relative overflow-hidden bg-blush">
-      {/* Plum ribbon between the butter section above and this one */}
+      {/* Plum ribbon between the butter section above and this one. A few slow,
+          lopsided swells per edge, so it reads as a brushstroke rather than a zigzag. */}
       <svg
-        viewBox="0 0 1440 130"
+        viewBox="0 0 1440 150"
         preserveAspectRatio="none"
         aria-hidden="true"
-        className="block h-16 w-full sm:h-24 lg:h-28"
+        className="block h-20 w-full sm:h-28 lg:h-32"
       >
         <path
           className="fill-plum"
-          d="M0 0h1440v92C1395 92 1395 120 1350 120C1305 120 1305 88 1260 88C1215 88 1215 116 1170 116C1125 116 1125 94 1080 94C1035 94 1035 122 990 122C945 122 945 90 900 90C855 90 855 118 810 118C765 118 765 86 720 86C675 86 675 120 630 120C585 120 585 92 540 92C495 92 495 116 450 116C405 116 405 88 360 88C315 88 315 122 270 122C225 122 225 94 180 94C135 94 135 118 90 118C45 118 45 90 0 90Z"
+          d="M0 0h1440v110C1404 110 1395 132 1350 132C1280 132 1270 98 1150 98C1070 98 1038 120 990 120C920 120 920 104 850 104C724 104 703 142 640 142C580 142 572 108 470 108C405 108 392 126 340 126C256 126 235 90 130 90C84 90 78 112 0 112Z"
         />
         <path
           className="fill-butter"
-          d="M0 0h1440v18C1380 18 1380 40 1320 40C1260 40 1260 14 1200 14C1140 14 1140 36 1080 36C1020 36 1020 20 960 20C900 20 900 42 840 42C780 42 780 16 720 16C660 16 660 38 600 38C540 38 540 12 480 12C420 12 420 40 360 40C300 40 300 18 240 18C180 18 180 36 120 36C60 36 60 22 0 22Z"
+          d="M0 0h1440v20C1345 20 1316 50 1250 50C1193 50 1174 12 1060 12C978 12 970 32 910 32C835 32 835 18 760 18C683 18 661 56 540 56C456 56 449 30 400 30C324 30 315 48 230 48C115 48 80 22 0 22Z"
         />
       </svg>
 
