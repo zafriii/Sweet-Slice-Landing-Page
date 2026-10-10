@@ -28,6 +28,25 @@ export function CartIcon(props: IconProps) {
   );
 }
 
+export function ShoppingBagIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
+      <path d="M6 8h12l1 12H5L6 8Z" />
+      <path d="M9 8V7a3 3 0 0 1 6 0v1" />
+    </svg>
+  );
+}
+
+export function ImageIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <circle cx="8.500" cy="9.500" r="1.500" />
+      <path d="m4 18 5-5 4 4 3-3 4 4" />
+    </svg>
+  );
+}
+
 export function MenuIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
