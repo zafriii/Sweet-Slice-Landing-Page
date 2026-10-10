@@ -1,10 +1,9 @@
 import Link from "next/link";
 import HeroShowcase from "./HeroShowcase";
-import { FacebookIcon, InstagramIcon, TwitterIcon } from "./icons";
+import { FacebookIcon, InstagramIcon } from "./icons";
 
 const socials = [
   { label: "Facebook", href: "https://facebook.com", Icon: FacebookIcon },
-  { label: "Twitter", href: "https://twitter.com", Icon: TwitterIcon },
   { label: "Instagram", href: "https://instagram.com", Icon: InstagramIcon },
 ];
 
@@ -33,7 +32,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="grid w-full items-center gap-16 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-10 xl:gap-16">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-10 xl:gap-16">
         <div>
           <p className="flex items-end gap-3 font-hand text-4xl leading-none sm:text-5xl xl:text-6xl">
             <span>

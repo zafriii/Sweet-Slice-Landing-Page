@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <header className="relative z-20 px-6 pt-6 sm:px-10 lg:px-24 lg:pt-10 xl:px-30">
-      <div className="flex items-center justify-between gap-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
         {/* Text placeholder until the real logo is added */}
         <Link
           href="/"
