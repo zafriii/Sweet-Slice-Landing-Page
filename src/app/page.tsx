@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BestChoice from "@/components/BestChoice";
+import HappyCustomers from "@/components/HappyCustomers";
 import Hero from "@/components/Hero";
 import HowToOrder from "@/components/HowToOrder";
 import Navbar from "@/components/Navbar";
@@ -34,6 +35,7 @@ export default function Home() {
       <Signature />
       <BestChoice />
       <HowToOrder />
+      <HappyCustomers />
     </main>
   );
 }
