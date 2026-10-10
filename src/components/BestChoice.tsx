@@ -16,7 +16,7 @@ const note =
 export default function BestChoice() {
   return (
     <section id="occasions" className="relative overflow-hidden bg-blush">
-      {/* Plum ribbon between the butter section above and this one. A few slow,
+      {/* Plum ribbon between the peach section above and this one. A few slow,
           lopsided swells per edge, so it reads as a brushstroke rather than a zigzag. */}
       <svg
         viewBox="0 0 1440 150"
@@ -29,7 +29,7 @@ export default function BestChoice() {
           d="M0 0h1440v110C1404 110 1395 132 1350 132C1280 132 1270 98 1150 98C1070 98 1038 120 990 120C920 120 920 104 850 104C724 104 703 142 640 142C580 142 572 108 470 108C405 108 392 126 340 126C256 126 235 90 130 90C84 90 78 112 0 112Z"
         />
         <path
-          className="fill-butter"
+          className="fill-peach"
           d="M0 0h1440v20C1345 20 1316 50 1250 50C1193 50 1174 12 1060 12C978 12 970 32 910 32C835 32 835 18 760 18C683 18 661 56 540 56C456 56 449 30 400 30C324 30 315 48 230 48C115 48 80 22 0 22Z"
         />
       </svg>

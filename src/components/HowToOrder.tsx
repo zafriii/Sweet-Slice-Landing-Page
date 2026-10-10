@@ -7,7 +7,7 @@ const steps = [
 
 export default function HowToOrder() {
   return (
-    <section id="order" className="bg-butter">
+    <section id="order" className="bg-peach">
       {/* Teal ribbon between the blush section above and this one */}
       <svg
         viewBox="0 0 1440 150"
@@ -20,7 +20,7 @@ export default function HowToOrder() {
       </svg>
 
       <div className="mx-auto max-w-7xl px-6 pb-28 pt-12 sm:px-10 sm:pb-20 sm:pt-16 lg:px-24 lg:pb-24 xl:px-30">
-        <h2 className="text-center font-display text-4xl text-brand [-webkit-text-stroke:0.008em_currentColor] [word-spacing:-0.18em] sm:text-5xl lg:text-6xl">
+        <h2 className="text-center font-display text-4xl text-plum [-webkit-text-stroke:0.008em_currentColor] [word-spacing:-0.18em] sm:text-5xl lg:text-6xl">
           How to Order
         </h2>
 
@@ -33,7 +33,7 @@ export default function HowToOrder() {
               className="group mx-auto flex h-[24rem] w-full max-w-[16rem] flex-col items-center rounded-full bg-white px-5 pt-16 text-center sm:h-[28rem] sm:even:mt-24 sm:even:flex-col-reverse sm:even:pb-16 sm:even:pt-0 xl:h-[30rem]"
             >
               <div>
-                <h3 className="font-display text-2xl text-brand [word-spacing:-0.18em]">
+                <h3 className="font-display text-2xl text-plum [word-spacing:-0.18em]">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-teal xl:text-base">
@@ -43,7 +43,7 @@ export default function HowToOrder() {
               <span aria-hidden="true" className="my-6 w-px flex-1 bg-brand/50" />
               <span
                 aria-hidden="true"
-                className="flex size-28 shrink-0 translate-y-1/2 items-center justify-center rounded-full bg-teal font-display text-5xl text-white shadow-lg shadow-teal/25 sm:group-even:-translate-y-1/2 xl:size-32"
+                className="flex size-28 shrink-0 translate-y-1/2 items-center justify-center rounded-full bg-brand font-display text-5xl text-white shadow-lg shadow-brand/25 sm:group-even:-translate-y-1/2 xl:size-32"
               >
                 {i + 1}
               </span>

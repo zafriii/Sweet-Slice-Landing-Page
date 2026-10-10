@@ -19,7 +19,7 @@ const products: Product[] = [
 
 export default function Signature() {
   return (
-    <section id="cakes" className="bg-butter">
+    <section id="cakes" className="bg-peach">
       {/* Pink page frame dripping into the section */}
       <svg
         viewBox="0 0 1440 100"
