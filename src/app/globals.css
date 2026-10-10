@@ -4,6 +4,8 @@
   --brand: #ee2463;
   --brand-dark: #d4154f;
   --blush: #fde8ee;
+  --cream: #fffaf6;
+  --mint: #dcf1ea;
   --ink: #1d1317;
   --plum: #6b1d3f;
   --teal: #1f5c5e;
@@ -14,6 +16,8 @@
   --color-brand: var(--brand);
   --color-brand-dark: var(--brand-dark);
   --color-blush: var(--blush);
+  --color-cream: var(--cream);
+  --color-mint: var(--mint);
   --color-ink: var(--ink);
   --color-plum: var(--plum);
   --color-teal: var(--teal);

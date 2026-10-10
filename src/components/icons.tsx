@@ -140,3 +140,11 @@ export function InstagramIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function SparkleIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} strokeWidth={1.5} {...props}>
+      <path d="M12 2c.8 5.600 4.400 9.200 10 10-5.600.8-9.200 4.400-10 10-.8-5.600-4.400-9.200-10-10 5.600-.8 9.200-4.400 10-10Z" />
+    </svg>
+  );
+}
