@@ -2,31 +2,23 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  CakeLogoIcon,
-  StarIcon,
-} from "./icons";
+import { ArrowLeftIcon, ArrowRightIcon, CakeLogoIcon } from "./icons";
 
 const slides = [
   {
     name: "Sweet Cakes",
-    rating: 4.5,
     image: "/images/cake1.png",
     scale: "scale-135",
     alt: "Pink heart-shaped cake with piped borders and purple butterflies",
   },
   {
     name: "Party Cakes",
-    rating: 4.8,
     image: "/images/cake2.png",
     scale: "scale-110",
     alt: "Two-tier lilac and cream cake topped with pastel balloons",
   },
   {
     name: "Choco Cakes",
-    rating: 4.6,
     image: "/images/cake3.png",
     scale: "scale-120",
     alt: "Round chocolate cake with pink butterflies and silver pearls",
@@ -34,24 +26,6 @@ const slides = [
 ];
 
 const pad = (value: number) => String(value).padStart(2, "0");
-
-function Stars({ rating }: { rating: number }) {
-  const row = Array.from({ length: 5 }, (_, i) => (
-    <StarIcon key={i} className="size-3.5 shrink-0 xl:size-4.5" />
-  ));
-
-  return (
-    <span className="relative inline-flex text-white/25">
-      {row}
-      <span
-        className="absolute inset-y-0 left-0 flex overflow-hidden text-amber-400"
-        style={{ width: `${(rating / 5) * 100}%` }}
-      >
-        {row}
-      </span>
-    </span>
-  );
-}
 
 function CareBadge() {
   return (
@@ -119,13 +93,6 @@ export default function HeroShowcase() {
             >
               {slide.name}
             </p>
-
-            <div className="absolute bottom-0 right-0 flex items-center gap-2 rounded-tl-2xl bg-ink px-4 py-3 text-sm font-semibold text-white xl:px-6 xl:py-5 xl:text-lg">
-              <Stars rating={slide.rating} />
-              <span aria-label={`Rated ${slide.rating} out of 5`}>
-                {slide.rating}
-              </span>
-            </div>
           </div>
 
           <CareBadge />

@@ -28,13 +28,13 @@ export default function Navbar() {
         {/* Text placeholder until the real logo is added */}
         <Link
           href="/"
-          aria-label="Cakes Bakery home"
+          aria-label="Sweet Slice home"
           className="flex items-center gap-4 font-display text-2xl leading-[0.95] [-webkit-text-stroke:0.008em_currentColor] lg:text-[1.75rem]"
         >
           <CakeLogoIcon className="size-12 shrink-0 lg:size-14" />
           <span>
-            <span className="block">Cakes</span>
-            <span className="block text-brand">bakery.</span>
+            <span className="block">Sweet</span>
+            <span className="block text-brand">Slice</span>
           </span>
         </Link>
 
