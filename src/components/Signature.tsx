@@ -1,39 +1,41 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ImageIcon, ShoppingBagIcon } from "./icons";
 
 type Product = {
   name: string;
   price: number;
-  href: string;
+  unit: "pound" | "piece";
   // Leave unset to show the placeholder; point at a file in /public/images once the photo exists
   image?: string;
   alt?: string;
 };
 
+// Opens a Messenger chat with the bakery's Facebook page
+const MESSENGER_URL = "https://m.me/61575617819549";
+
 const products: Product[] = [
   {
     name: "Simple Vanilla Cake",
     price: 700,
-    href: "#",
+    unit: "pound",
     image: "/images/vanilla_cake.png",
   },
   {
     name: "Simple Chocolate Cake",
     price: 850,
-    href: "#",
+    unit: "pound",
     image: "/images/chocolate_cake.png",
   },
   {
     name: "Butter Scotch",
     price: 900,
-    href: "#",
+    unit: "pound",
     image: "/images/butter_scotch_cake.png",
   },
   {
     name: "Cupcakes",
     price: 80,
-    href: "#",
+    unit: "piece",
     image: "/images/cupcakes.png",
   },
 ];
@@ -100,13 +102,18 @@ export default function Signature() {
                   </span>
                   <span className="mr-1">৳</span>
                   {product.price}
+                  <span className="ml-1.5 font-sans text-xs font-bold text-plum/60">
+                    / {product.unit}
+                  </span>
                 </p>
-                <Link
-                  href={product.href}
+                <a
+                  href={MESSENGER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="border-b border-plum pb-0.5 text-xs font-bold text-plum transition-colors hover:border-brand hover:text-brand"
                 >
                   More Details
-                </Link>
+                </a>
               </div>
             </li>
           ))}

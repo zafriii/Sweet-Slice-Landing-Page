@@ -3,16 +3,16 @@ import HeroShowcase from "./HeroShowcase";
 import { FacebookIcon, InstagramIcon } from "./icons";
 
 const socials = [
-  { label: "Facebook", href: "https://facebook.com", Icon: FacebookIcon },
-  { label: "Instagram", href: "https://instagram.com", Icon: InstagramIcon },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61575617819549", Icon: FacebookIcon },
+  { label: "Instagram", href: "https://www.instagram.com/__sweet.slice__", Icon: InstagramIcon },
 ];
 
 export default function Hero() {
   return (
     <section className="relative flex flex-1 items-center px-6 py-12 sm:px-10 lg:px-24 lg:py-10 xl:px-30">
       {/* Left rail */}
-      <div className="absolute left-12 top-1/2 hidden -translate-y-1/2 flex-col items-center gap-12 lg:flex">
-        <ul className="flex flex-col gap-10">
+      <div className="absolute left-12 top-1/2 hidden -translate-y-1/2 flex-col items-center gap-6 lg:flex">
+        <ul className="flex flex-col gap-4">
           {socials.map(({ label, href, Icon }) => (
             <li key={label}>
               <a
@@ -36,14 +36,14 @@ export default function Hero() {
         <div>
           <p className="flex items-end gap-3 font-hand text-4xl leading-none sm:text-5xl xl:text-6xl">
             <span>
-              Every One <span className="text-brand">Love&rsquo;s</span>
+              Every One <span className="text-brand">Loves</span>
             </span>
             <span className="mb-2 h-0.5 w-12 bg-ink xl:mb-3" />
           </p>
 
           <h1 className="mt-4 font-display text-[clamp(2.1rem,5.6vw,5.6rem)] leading-[1.05] [-webkit-text-stroke:0.008em_currentColor] [word-spacing:-0.18em]">
             <span className="relative block w-fit">
-              Natural and
+              Fresh and
               <svg
                 viewBox="0 0 70 90"
                 aria-hidden="true"
@@ -57,13 +57,13 @@ export default function Hero() {
                 <path d="M7 7c2-4 8-3 9 1l3 33c0 2-2 3-3 1L7 7ZM40 15c3-3 8-1 7 3L36 47c-1 2-3 1-3-1l7-31ZM50 54l6 5M56 76l5-4 1 7 5-4" />
               </svg>
             </span>
-            <span className="block whitespace-nowrap text-brand">healthy Cakes.</span>
+            <span className="block whitespace-nowrap text-brand">Tasty Cakes.</span>
           </h1>
 
           <p className="mt-6 max-w-[33rem] text-base leading-relaxed text-ink/90 lg:text-lg xl:text-[1.35rem] xl:font-light">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit
-            magna aliqua.
+            Every cake starts in our home kitchen in Sylhet and is made by
+            hand, the way we&rsquo;d bake it for our own family. Tell us the
+            occasion and we&rsquo;ll handle the sweet part.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3 text-sm font-medium uppercase xl:text-[1.05rem]">
