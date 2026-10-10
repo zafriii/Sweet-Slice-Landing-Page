@@ -9,6 +9,7 @@ const links = [
   { label: "Cakes", href: "#cakes" },
   { label: "Occasions", href: "#occasions" },
   { label: "How to Order", href: "#order" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -31,7 +32,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-5 lg:gap-14 xl:gap-20">
           <nav aria-label="Main" className="hidden md:block">
-            <ul className="flex items-center gap-10 font-bold tracking-wide lg:gap-12 xl:gap-18">
+            <ul className="flex items-center gap-6 whitespace-nowrap font-bold tracking-wide lg:gap-10 xl:gap-18">
               {links.map((link) => (
                 <li key={link.label}>
                   <Link

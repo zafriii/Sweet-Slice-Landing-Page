@@ -145,7 +145,7 @@ export default function HappyCustomers() {
         ))}
       </div>
 
-      {/* Pink page frame rising to close the page */}
+      {/* Pink page frame rising to meet the contact panel */}
       <svg
         viewBox="0 0 1440 60"
         preserveAspectRatio="none"

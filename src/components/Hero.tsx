@@ -68,7 +68,7 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-wrap gap-3 text-sm font-medium uppercase xl:text-[1.05rem]">
             <Link
-              href="#order"
+              href="#contact"
               className="rounded-full border-2 border-brand bg-brand px-8 py-3.5 xl:px-10 xl:py-4.5 text-white shadow-lg shadow-brand/30 transition-colors hover:border-brand-dark hover:bg-brand-dark"
             >
               Order now

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BestChoice from "@/components/BestChoice";
+import Contact from "@/components/Contact";
 import HappyCustomers from "@/components/HappyCustomers";
 import Hero from "@/components/Hero";
 import HowToOrder from "@/components/HowToOrder";
@@ -36,6 +37,7 @@ export default function Home() {
       <BestChoice />
       <HowToOrder />
       <HappyCustomers />
+      <Contact />
     </main>
   );
 }

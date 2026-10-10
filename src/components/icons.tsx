@@ -141,6 +141,29 @@ export function InstagramIcon(props: IconProps) {
   );
 }
 
+export function WhatsAppIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
+      <path d="M7.900 20A9 9 0 1 0 4 16.100L2 22Z" />
+      <path
+        transform="translate(8.300 6.300) scale(.39)"
+        fill="currentColor"
+        stroke="none"
+        d="M22 16.920v3a2 2 0 0 1-2.180 2 19.790 19.790 0 0 1-8.630-3.070 19.500 19.500 0 0 1-6-6 19.790 19.790 0 0 1-3.070-8.670A2 2 0 0 1 4.110 2h3a2 2 0 0 1 2 1.720 12.840 12.840 0 0 0 .7 2.810 2 2 0 0 1-.45 2.110L8.090 9.910a16 16 0 0 0 6 6l1.270-1.270a2 2 0 0 1 2.110-.45 12.840 12.840 0 0 0 2.810.7A2 2 0 0 1 22 16.920Z"
+      />
+    </svg>
+  );
+}
+
+export function MapPinIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
+      <path d="M12 21.500c4.500-4.300 7-7.900 7-11.500a7 7 0 0 0-14 0c0 3.600 2.500 7.200 7 11.500Z" />
+      <circle cx="12" cy="10" r="2.500" />
+    </svg>
+  );
+}
+
 export function SparkleIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} strokeWidth={1.5} {...props}>
