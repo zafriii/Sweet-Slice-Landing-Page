@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ArrowLeftIcon, ArrowRightIcon, CakeLogoIcon } from "./icons";
+import { ArrowLeftIcon, ArrowRightIcon } from "./icons";
 
 const slides = [
   {
@@ -27,30 +27,17 @@ const slides = [
 
 const pad = (value: number) => String(value).padStart(2, "0");
 
-function CareBadge() {
+function BrandBadge() {
   return (
-    <div className="absolute -left-6 top-10 z-10 flex size-24 items-center justify-center rounded-full border border-dashed border-ink bg-white shadow-lg shadow-brand/10 sm:-left-14 sm:top-16 sm:size-32 xl:size-36">
-      <svg
-        viewBox="0 0 100 100"
-        aria-hidden="true"
-        className="absolute inset-0 motion-safe:animate-[spin_24s_linear_infinite]"
-      >
-        <defs>
-          <path
-            id="care-badge-ring"
-            d="M50 50m-34 0a34 34 0 1 1 68 0a34 34 0 1 1-68 0"
-          />
-        </defs>
-        <text
-          className="fill-ink text-[8.500px] font-bold uppercase"
-          textLength="208"
-        >
-          <textPath href="#care-badge-ring">We care about your cake! •</textPath>
-        </text>
-      </svg>
-      <CakeLogoIcon className="size-8 sm:size-10" />
-      <span className="sr-only">We care about your cake!</span>
-    </div>
+    // The artwork only fills ~70% of the PNG, so the box is oversized to compensate
+    <Image
+      src="/images/sweet-slice-badge.png"
+      alt="Sweet Slice Home Bakery"
+      width={500}
+      height={500}
+      sizes="(min-width: 1280px) 13rem, (min-width: 640px) 12rem, 9rem"
+      className="absolute -left-10 top-4 z-10 size-36 drop-shadow-lg sm:-left-22 sm:top-8 sm:size-48 xl:size-52"
+    />
   );
 }
 
@@ -95,7 +82,7 @@ export default function HeroShowcase() {
             </p>
           </div>
 
-          <CareBadge />
+          <BrandBadge />
         </div>
 
         <div className="mt-8 flex justify-end gap-3">
@@ -121,7 +108,7 @@ export default function HeroShowcase() {
       {/* Vertical slide indicator; from lg up it sits on the hero's right rail (positioned against the section) */}
       <div
         aria-hidden="true"
-        className="hidden flex-col items-center gap-3 pb-16 pt-12 text-xs font-bold sm:flex lg:absolute lg:right-12 lg:top-1/2 lg:h-88 lg:-translate-y-1/2 lg:p-0"
+        className="hidden flex-col items-center gap-3 pb-16 pt-12 text-xs font-bold sm:flex lg:absolute lg:right-14 lg:top-1/2 xl:right-18 lg:h-88 lg:-translate-y-1/2 lg:p-0"
       >
         <span className="text-brand">{pad(index + 1)}</span>
         <span className="relative w-px flex-1 bg-ink/15">
