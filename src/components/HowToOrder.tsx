@@ -103,7 +103,10 @@ export default function HowToOrder() {
                   Delivered fresh to your doorstep
                 </p>
                 <p className="mt-1 text-xs font-bold text-brand sm:text-sm">
-                  ৳100 Delivery charge
+                  ৳100 Delivery charge{' '}
+                  <span className="text-[11px] font-normal text-ink/70 sm:text-xs">
+                    (varies by location)
+                  </span>
                 </p>
               </div>
             </div>

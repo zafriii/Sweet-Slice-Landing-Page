@@ -67,7 +67,7 @@ const occasions: Occasion[] = [
   {
     name: "Date Night",
     text: "A little something sweet, just for two.",
-    image: "/images/Date_Night_Cake.jpeg",
+    image: "/images/Date_Night_Cake.jpg",
   },
 ];
 
