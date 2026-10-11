@@ -18,37 +18,37 @@ function shot(file: string, width: number, height: number, alt: string): Chat {
 // Ordered narrow, wide, narrow, wide… so the row keeps an even rhythm
 const chats: Chat[] = [
   shot(
-    "1.jpeg",
+    "1.jpg",
     828,
     1218,
     "Customer chat with a photo of a green rosette anniversary cake: \u201cCake amar baba maa r onek bhallagse! Thankuuu\u201d",
   ),
   shot(
-    "4.jpeg",
+    "4.jpg",
     728,
     616,
     "Customer chat: \u201cCake ta onek moja chilo, sobbai pocondo korse r jemon caiselam amn e hoiche\u201d",
   ),
   shot(
-    "3.jpeg",
+    "3.jpg",
     737,
     965,
     "Customer chat with a photo of a pink and white birthday cake: \u201cThank you sm. Cake ta dekhte nd khete khub e valo chilo!\u201d",
   ),
   shot(
-    "5.jpeg",
+    "5.jpg",
     731,
     596,
     "Customer chat: \u201cCake ta khub e tasty chilo, cream tao valo, kena cake er moto excess oil nai. Design and taste obai onek pochondo koreche\u201d",
   ),
   shot(
-    "6.jpeg",
+    "6.jpg",
     729,
     964,
     "Customer chat: \u201cIt\u2019s beautiful, thank youuu. Actually eita amr ekta friend er order chilo and she said the cake was tastyyy!\u201d",
   ),
   shot(
-    "2.jpeg",
+    "2.jpg",
     738,
     677,
     "Customer chat: \u201cMy niece also loved it. It was so soft and tasty too, yummy. Thank u apu\u201d",
