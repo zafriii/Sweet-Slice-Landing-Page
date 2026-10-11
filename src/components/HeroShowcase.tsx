@@ -6,19 +6,19 @@ import { ArrowLeftIcon, ArrowRightIcon } from "./icons";
 
 const slides = [
   {
-    name: "Sweet Cakes",
+    name: "Two Tier",
     image: "/images/cake1.png",
     scale: "scale-135",
     alt: "Pink heart-shaped cake with piped borders and purple butterflies",
   },
   {
-    name: "Party Cakes",
+    name: "Heart Shape",
     image: "/images/cake2.png",
     scale: "scale-110",
     alt: "Two-tier lilac and cream cake topped with pastel balloons",
   },
   {
-    name: "Choco Cakes",
+    name: "Fondent Special",
     image: "/images/cake3.png",
     scale: "scale-120",
     alt: "Round chocolate cake with pink butterflies and silver pearls",

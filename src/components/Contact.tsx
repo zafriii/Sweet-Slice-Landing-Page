@@ -1,7 +1,8 @@
 import type { ComponentType, SVGProps } from "react";
-import { contactLinks, instagramHandle } from "@/lib/contact";
+import { contactLinks, instagramHandle, whatsappDisplayNumber } from "@/lib/contact";
 import {
   ArrowRightIcon,
+  ClockIcon,
   FacebookIcon,
   InstagramIcon,
   MapPinIcon,
@@ -34,12 +35,13 @@ const channels: Channel[] = [
   },
   {
     name: "WhatsApp",
-    text: "Prefer a quick chat? Text us your date, flavour and design ideas.",
+    text: `Prefer a quick chat? Text us at ${whatsappDisplayNumber} with your date, flavour and design ideas.`,
     cta: "Start a chat",
     href: contactLinks.whatsapp,
     Icon: WhatsAppIcon,
   },
 ];
+
 
 export default function Contact() {
   return (
@@ -102,15 +104,29 @@ export default function Contact() {
             </ul>
           </div>
 
-          <div className="mx-auto mt-14 flex max-w-3xl flex-col items-center gap-x-6 gap-y-3 rounded-3xl border-2 border-dashed border-plum/30 bg-white/60 px-6 py-6 text-center sm:flex-row sm:px-10 sm:text-left lg:mt-20">
-            <MapPinIcon className="size-9 shrink-0 text-brand" />
-            <p className="text-pretty font-medium text-plum">
-              <span className="mr-2 font-hand text-3xl leading-none text-brand">
-                Where we bake:
-              </span>
-              a home kitchen based in{" "}
-              <span className="font-bold text-brand">Sylhet, Bangladesh</span>.
-            </p>
+          <div className="mx-auto mt-14 grid max-w-3xl gap-4 lg:mt-20">
+            <div className="flex flex-col items-center gap-x-6 gap-y-3 rounded-3xl border-2 border-dashed border-plum/30 bg-white/60 px-6 py-5 text-center sm:flex-row sm:px-10 sm:text-left">
+              <ClockIcon className="size-9 shrink-0 text-brand" />
+              <p className="text-pretty font-medium text-plum">
+                <span className="mr-2 font-hand text-3xl leading-none text-brand">
+                  Advance notice:
+                </span>
+                For any occasion, please let us know at least{" "}
+                <span className="font-bold text-brand">a day in advance</span> (not
+                on the event day) so we can bake fresh and serve you best!
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center gap-x-6 gap-y-3 rounded-3xl border-2 border-dashed border-plum/30 bg-white/60 px-6 py-5 text-center sm:flex-row sm:px-10 sm:text-left">
+              <MapPinIcon className="size-9 shrink-0 text-brand" />
+              <p className="text-pretty font-medium text-plum">
+                <span className="mr-2 font-hand text-3xl leading-none text-brand">
+                  Where we bake:
+                </span>
+                a home bakery based in{" "}
+                <span className="font-bold text-brand">Sylhet, Bangladesh</span>.
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import { messengerLink } from "./messenger";
 
 // WhatsApp number in international format, digits only (e.g. 8801XXXXXXXXX).
-// While it is empty the link still opens WhatsApp, but without a chat selected.
-const WHATSAPP_NUMBER = "";
+export const WHATSAPP_NUMBER = "8801647822038";
+export const whatsappDisplayNumber = "+880 1647-822038";
 
 const INSTAGRAM_HANDLE = "__sweet.slice__";
 
@@ -16,3 +16,19 @@ export const contactLinks = {
 };
 
 export const instagramHandle = `@${INSTAGRAM_HANDLE}`;
+
+export function getMessengerLink(text: string) {
+  return messengerLink(text);
+}
+
+export function getInstagramLink(text?: string) {
+  const base = `https://ig.me/m/${INSTAGRAM_HANDLE}`;
+  return text ? `${base}?text=${encodeURIComponent(text)}` : base;
+}
+
+export function getWhatsAppLink(text?: string) {
+  const base = `https://wa.me/${WHATSAPP_NUMBER}`;
+  return text ? `${base}?text=${encodeURIComponent(text)}` : base;
+}
+
+

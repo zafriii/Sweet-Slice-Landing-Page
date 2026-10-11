@@ -27,12 +27,12 @@ const occasions: Occasion[] = [
   {
     name: "Paan Chini",
     text: "Sweets shared as two families say yes.",
-    image: "/images/Paan_Chini_Cake.jpeg",
+    image: "/images/Paan_Chini_Cake.png",
   },
   {
     name: "Haldi / Mehendi",
     text: "Bright florals to match the celebration.",
-    image: "/images/haldi_ceremony_cake.jpeg",
+    image: "/images/Haldi_Ceremony_Cake.png",
   },
   {
     name: "Wedding / Akht",
@@ -42,6 +42,7 @@ const occasions: Occasion[] = [
   {
     name: "Anniversary",
     text: "Another year together, worth celebrating.",
+    image: "/images/anniversery_cake.jpg",
   },
   {
     name: "Class Party",

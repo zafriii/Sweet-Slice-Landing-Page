@@ -155,6 +155,39 @@ export function WhatsAppIcon(props: IconProps) {
   );
 }
 
+export function WalkIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
+      <circle cx="13" cy="4" r="1.8" />
+      <path d="M7 21l3-4 1.5-1.5 2 2.5 3.5 5" />
+      <path d="M10 11l2-4 3 2 2-1" />
+      <path d="M9 13l2.5-2" />
+    </svg>
+  );
+}
+
+export function RiderIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
+      <circle cx="18" cy="17" r="3" />
+      <circle cx="6" cy="17" r="3" />
+      <path d="M6 17h5l2-7h4" />
+      <path d="M15 6h3" />
+      <path d="M16 10l2 7" />
+      <rect x="3.5" y="10" width="4.5" height="4" rx="0.8" />
+    </svg>
+  );
+}
+
+export function ClockIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 3" />
+    </svg>
+  );
+}
+
 export function MapPinIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
@@ -171,3 +204,29 @@ export function SparkleIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function MessengerIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" {...props}>
+      <path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.91 1.455 5.512 3.736 7.181V22l3.418-1.876c.905.251 1.861.386 2.846.386 5.523 0 10-4.145 10-9.252C22 6.145 17.523 2 12 2Zm1.004 12.443-2.56-2.73-5 2.73 5.498-5.836 2.623 2.73 4.939-2.73-5.5 5.836Z" />
+    </svg>
+  );
+}
+
+export function CheckIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+
+export function CopyIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke} {...props}>
+      <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+    </svg>
+  );
+}
+

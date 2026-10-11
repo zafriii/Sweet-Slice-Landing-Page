@@ -1,17 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import CakeInquiryModal, { type InquiryMode, type Product } from "./CakeInquiryModal";
 import { ImageIcon, ShoppingBagIcon } from "./icons";
-
-type Product = {
-  name: string;
-  price: number;
-  unit: "pound" | "piece";
-  // Leave unset to show the placeholder; point at a file in /public/images once the photo exists
-  image?: string;
-  alt?: string;
-};
-
-// Opens a Messenger chat with the bakery's Facebook page
-const MESSENGER_URL = "https://m.me/61575617819549";
 
 const products: Product[] = [
   {
@@ -28,19 +20,33 @@ const products: Product[] = [
   },
   {
     name: "Butter Scotch",
-    price: 900,
+    price: 1100,
     unit: "pound",
     image: "/images/butter_scotch_cake.png",
   },
   {
     name: "Cupcakes",
-    price: 80,
+    price: 60,
     unit: "piece",
     image: "/images/cupcakes.png",
   },
 ];
 
 export default function Signature() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [modalMode, setModalMode] = useState<InquiryMode>("buy");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = (product: Product, mode: InquiryMode) => {
+    setSelectedProduct(product);
+    setModalMode(mode);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <section id="cakes" className="bg-peach">
       {/* Pink page frame dripping into the section */}
@@ -88,8 +94,9 @@ export default function Signature() {
                 </h3>
                 <button
                   type="button"
-                  aria-label={`Add ${product.name} to bag`}
-                  className="flex size-12 shrink-0 items-center lg:size-10 xl:size-12 justify-center rounded-md bg-brand text-white transition-colors hover:bg-brand-dark"
+                  onClick={() => handleOpenModal(product, "buy")}
+                  aria-label={`Buy or order ${product.name}`}
+                  className="flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-md bg-brand text-white shadow-md shadow-brand/20 transition-all hover:bg-brand-dark active:scale-95 lg:size-10 xl:size-12"
                 >
                   <ShoppingBagIcon className="size-5" />
                 </button>
@@ -106,14 +113,13 @@ export default function Signature() {
                     / {product.unit}
                   </span>
                 </p>
-                <a
-                  href={MESSENGER_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border-b border-plum pb-0.5 text-xs font-bold text-plum transition-colors hover:border-brand hover:text-brand"
+                <button
+                  type="button"
+                  onClick={() => handleOpenModal(product, "details")}
+                  className="cursor-pointer border-b border-plum pb-0.5 text-xs font-bold text-plum transition-colors hover:border-brand hover:text-brand"
                 >
                   More Details
-                </a>
+                </button>
               </div>
             </li>
           ))}
@@ -133,6 +139,14 @@ export default function Signature() {
           </p>
         </div>
       </div>
+
+      <CakeInquiryModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        product={selectedProduct}
+        mode={modalMode}
+      />
     </section>
   );
 }
+

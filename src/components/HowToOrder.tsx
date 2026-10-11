@@ -1,8 +1,10 @@
+import { MapPinIcon, RiderIcon, WalkIcon } from "./icons";
+
 const steps = [
   { title: "Choose", text: "Pick your favorite cake flavor and design." },
   { title: "Customize", text: "Add personal touches and special requests." },
-  { title: "Order", text: "Place and pay for your order online." },
-  { title: "Enjoy", text: "Your cake is delivered fresh to your door." },
+  { title: "Order", text: "Place your order through our DMs (Facebook, Insta, WhatsApp)." },
+  { title: "Enjoy", text: "Your cake is delivered fresh to your door. Pay for your cake & enjoy every slice." },
 ];
 
 export default function HowToOrder() {
@@ -50,6 +52,63 @@ export default function HowToOrder() {
             </li>
           ))}
         </ol>
+
+        {/* Delivery & Pickup options */}
+        <div className="mx-auto mt-20 max-w-3xl sm:mt-24 lg:mt-28">
+          <div className="text-center">
+            <p className="font-hand text-3xl leading-normal text-brand sm:text-4xl">
+              how you get your cake
+            </p>
+            <h3 className="mt-3 font-display text-2xl text-plum [word-spacing:-0.18em] sm:mt-4 sm:text-3xl">
+              Delivery &amp; Pickup Options
+            </h3>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-6">
+            {/* Walk-in / Self-Pickup */}
+            <div className="group flex items-center gap-4 rounded-3xl border-2 border-plum bg-white p-5 shadow-md shadow-plum/10 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-plum/15">
+              <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-brand text-white shadow-md shadow-brand/25 transition-colors group-hover:bg-brand-dark">
+                <WalkIcon className="size-7" />
+              </span>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h4 className="font-display text-xl text-plum">Self Pickup</h4>
+                  <span className="rounded-full bg-peach px-2.5 py-0.5 text-xs font-bold text-plum">
+                    Walk-in
+                  </span>
+                </div>
+                <p className="mt-1 flex items-center gap-1.5 text-xs font-medium text-plum/85 sm:text-sm">
+                  <MapPinIcon className="size-3.5 shrink-0 text-brand sm:size-4" />
+                  Mirer Maidan, Sylhet
+                </p>
+                <p className="mt-1 text-xs font-bold text-brand sm:text-sm">
+                  Free
+                </p>
+              </div>
+            </div>
+
+            {/* Rider Delivery */}
+            <div className="group flex items-center gap-4 rounded-3xl border-2 border-plum bg-white p-5 shadow-md shadow-plum/10 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-plum/15">
+              <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-brand text-white shadow-md shadow-brand/25 transition-colors group-hover:bg-brand-dark">
+                <RiderIcon className="size-7" />
+              </span>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h4 className="font-display text-xl text-plum">Home Delivery</h4>
+                  <span className="rounded-full bg-peach px-2.5 py-0.5 text-xs font-bold text-plum">
+                    Rider
+                  </span>
+                </div>
+                <p className="mt-1 text-xs text-ink/80 sm:text-sm">
+                  Delivered fresh to your doorstep
+                </p>
+                <p className="mt-1 text-xs font-bold text-brand sm:text-sm">
+                  ৳100 Delivery charge
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Cream swell closing the section */}
