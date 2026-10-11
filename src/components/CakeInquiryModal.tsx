@@ -276,7 +276,7 @@ export default function CakeInquiryModal({
         {/* Compact Contact us section with smaller icons */}
         <div className="mt-4 border-t border-plum/10 pt-3 text-center">
           <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-plum/70">
-            Contact us
+            Click below to continue with your preferred platform
           </p>
 
           <div className="mt-2.5 flex items-center justify-center gap-4">
