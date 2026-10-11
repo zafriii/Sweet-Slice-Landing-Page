@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { getInstagramLink, getMessengerLink } from "@/lib/contact";
+import {
+  getInstagramLink,
+  getMessengerLink,
+  getWhatsAppLink,
+  whatsappDisplayNumber,
+} from "@/lib/contact";
 import {
   CartIcon,
   CheckIcon,
@@ -12,6 +17,7 @@ import {
   ImageIcon,
   InstagramIcon,
   SparkleIcon,
+  WhatsAppIcon,
 } from "./icons";
 
 export type Product = {
@@ -113,10 +119,16 @@ export default function CakeInquiryModal({
     return false;
   };
 
-  const handleOpenPlatform = async (platform: "facebook" | "instagram") => {
+  const handleOpenPlatform = async (
+    platform: "whatsapp" | "facebook" | "instagram"
+  ) => {
     await copyToClipboard();
 
-    if (platform === "facebook") {
+    if (platform === "whatsapp") {
+      setStatusNotice("Opening WhatsApp with your message ready!");
+      const url = getWhatsAppLink(message);
+      window.open(url, "_blank", "noopener,noreferrer");
+    } else if (platform === "facebook") {
       setStatusNotice("Opening Messenger with your message ready!");
       const url = getMessengerLink(message);
       window.open(url, "_blank", "noopener,noreferrer");
@@ -268,6 +280,17 @@ export default function CakeInquiryModal({
           </p>
 
           <div className="mt-2.5 flex items-center justify-center gap-4">
+            {/* WhatsApp */}
+            <button
+              type="button"
+              onClick={() => handleOpenPlatform("whatsapp")}
+              aria-label={`Contact us on WhatsApp (${whatsappDisplayNumber})`}
+              title={`WhatsApp (${whatsappDisplayNumber})`}
+              className="group flex size-11 cursor-pointer items-center justify-center rounded-full border-2 border-plum bg-brand text-white shadow-md shadow-brand/20 transition hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-lg active:scale-95 sm:size-12"
+            >
+              <WhatsAppIcon className="size-5 transition-transform group-hover:scale-110" />
+            </button>
+
             {/* Facebook Messenger */}
             <button
               type="button"
@@ -290,6 +313,16 @@ export default function CakeInquiryModal({
               <InstagramIcon className="size-5 transition-transform group-hover:scale-110" />
             </button>
           </div>
+
+          <p className="mt-2.5 text-xs font-medium text-plum/75">      
+            <button
+              type="button"
+              onClick={() => handleOpenPlatform("whatsapp")}
+              className="cursor-pointer font-bold text-brand hover:underline"
+              title={`Chat on WhatsApp (${whatsappDisplayNumber})`}
+            >              
+            </button>
+          </p>
         </div>
       </div>
     </div>
