@@ -35,7 +35,7 @@ const channels: Channel[] = [
   },
   {
     name: "WhatsApp",
-    text: `Prefer a quick chat? Text us at ${whatsappDisplayNumber} with your date, flavour and design ideas.`,
+    text: `Prefer a quick chat? Text us with your date, flavour and design ideas.`,
     cta: "Start a chat",
     href: contactLinks.whatsapp,
     Icon: WhatsAppIcon,

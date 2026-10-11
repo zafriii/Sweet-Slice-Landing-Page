@@ -47,12 +47,12 @@ const occasions: Occasion[] = [
   {
     name: "Class Party",
     text: "Big enough for the whole batch to share.",
-    image: "/images/class_party_cake.jpg",
+    image: "/images/class_party_cake.png",
   },
   {
     name: "Teachers Day",
     text: "A sweet thank-you for a favourite teacher.",
-    image: "/images/teachers_day_cake.jpeg",
+    image: "/images/teachers_day_cake.png",
   },
   {
     name: "Friendship Day",
